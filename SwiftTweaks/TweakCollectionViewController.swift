@@ -112,15 +112,15 @@ extension TweakCollectionViewController: UITableViewDataSource {
 
 	private static let sectionFooterHeight: CGFloat = 27
 
-    private func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 		return TweakCollectionViewController.sectionFooterHeight
 	}
 
-	private func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		return TweakGroupSectionHeader.height
 	}
 
-	private func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: TweakGroupSectionHeader.identifier) as! TweakGroupSectionHeader
 		headerView.tweakGroup = tweakCollection.sortedTweakGroups[section]
 		headerView.delegate = self
